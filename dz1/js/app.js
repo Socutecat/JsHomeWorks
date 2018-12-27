@@ -43,7 +43,7 @@ console.log(string.slice(0, -6));
 
 let a = 20,
 	b = 16;
-res = String(a) + String(b);
+let res = String(a) + String(b);
 console.log(res);
 
 
