@@ -118,10 +118,10 @@ console.log(0 || "string"); // 'string' запнулось на правде
 console.log(1 && "string"); //'string' запнулось на последней правде
 
 // let a = null || 25;
-console.log(null || 25); //'25' запнулось на правде
+console.log( null || 25); //'25' запнулось на правде
 
 // let a = null && 25;
-console.log(null & 25); // 'null' запнулось на первой  лжи
+console.log(null && 25); // 'null' запнулось на первой  лжи
 
 // let a = null || 0 || 35;
 console.log(null || 0 || 35); //'35' запнулось на первой правде
