@@ -5,7 +5,7 @@ let myStringVariable = 'i am in the eeasycode';
 let res = '';
 
 for (let i = 0; i < myStringVariable.length; i++) {
-	res += (myStringVariable[i - 1] === ' ') ? myStringVariable[i].toUpperCase() : myStringVariable[i];
+	res += (myStringVariable[i - 1] === ' ' || i === 0) ? myStringVariable[i].toUpperCase() : myStringVariable[i];
 	console.log(res);
 }
 
@@ -14,7 +14,7 @@ for (let i = 0; i < myStringVariable.length; i++) {
 let myVar = 'tseb eht ma i';
 let myRes = '';
 
-for (i = myVar.length - 1; i >= 0; i--) {
+for (let i = myVar.length - 1; i >= 0; i--) {
 	myRes += myVar[i];
 	console.log(myRes)
 }
@@ -36,7 +36,7 @@ let stringVariable = 'JavaScript is a pretty good language';
 
 let result = '';
 
-for (i = 0; i < stringVariable.length; i++) {
+for (let i = 0; i < stringVariable.length; i++) {
 	if (stringVariable[i] !== " ") {
 		result += stringVariable[i - 1] === " " ? stringVariable[i].toUpperCase() : stringVariable[i];
 	}
@@ -49,10 +49,7 @@ for (i = 0; i < stringVariable.length; i++) {
 let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 for (let index of myArray) {
-	// if (value %2 !=0){
-	// 	console.log(value);
-	// }
-	index % 2 != 0 ? console.log(index) : console.log();
+	if (index % 2) console.log(index);
 }
 
 
@@ -116,7 +113,8 @@ let visibility = "hidden";
 
 
 
-visibility === 'hidden' ? visibility = 'visible' : visibility = 'hidden';
+visibility = visibility === 'hidden' ? 'visible' : 'hidden';
+console.log(visibility);
 
 
 
@@ -130,9 +128,12 @@ let myConstVariable = 0;
 //   myConstVariable *= 10;
 // }
 
-myConstVariable === 0 ? myConstVariable = 1 : myConstVariable < 0 ?
-	myConstVariable = 'less then zero' :
-	myConstVariable *= 10;
+// myConstVariable === 0 ? myConstVariable = 1 : myConstVariable < 0 ?
+// 	myConstVariable = 'less then zero' :
+// 	myConstVariable *= 10;
+
+myConstVariable = myConstVariable === 0 ? 1 :myConstVariable < 0 ? 'less then zero' :myConstVariable *=10;
+console.log(myConstVariable);
 
 
 let car = {
@@ -148,5 +149,4 @@ let car = {
 // } else {
 // 	car.needRepair = false;
 // }
-
 car.age > 5 ? car.needRepair = true : car.needRepair = false;
