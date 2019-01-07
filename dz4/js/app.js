@@ -30,7 +30,7 @@ function multiply() {
 	}
 	return doubleRes;
 }
-let mult = multiply(1, 2 ,3)
+let mult = multiply(1, 2, 3)
 console.log(mult);
 
 // Создать функцию, которая принимает строку и возвращает строку-перевертыш: reverseString(‘test’) // “tset”.
@@ -82,7 +82,8 @@ console.log(doubleArray);
 
 // 8. Создать функцию которая принимает массив пользователей, поле на которое хочу проверить и значение на которое хочу проверять. Проверять что все аргументы переданы. Возвращать новый массив с пользователями соответсвующие указанным параметрам.
 
-let items = [{
+let items = [
+	{
 		name: 'Denis',
 		age: 29,
 		gender: 'male'
@@ -104,10 +105,11 @@ function getUsers(items, prop, value) {
 	for (item of items) {
 		if (item[prop] === value) {
 			res.push(item);
-		}
-		return res;
+		}		
 	}
+	return res;
 }
+
 console.log(getUsers(items, "gender", "male"));
 
 // 7. Создать функцию, которая принимает произвольное (любое) число массивов и удаляет из каждого массива первый элемент, а возвращает массив из оставшихся значений: 
@@ -121,7 +123,7 @@ function changeCollection() {
 	}
 	return res;
 }
-let changedCollection = changeCollection([1,2,3], ['a', 'b', 'c']);
+let changedCollection = changeCollection([1, 2, 3], ['a', 'b', 'c']);
 console.log(changedCollection);
 
 // 5. Создать функцию, которая принимает число N и возвращает массив, заполненный числами от 1 до N: getArray(10); // [1,2,3,4,5,6,7,8,9,10]
@@ -132,12 +134,12 @@ console.log(changedCollection);
 // 		myArray.push[i];
 // 	}
 // }
-function ranged (start, end) {
-    let foo = [];
-    for (let i = start; i <= end; i++) {
-        foo.push(i);
-    }
-    return foo;
+function ranged(start, end) {
+	let foo = [];
+	for (let i = start; i <= end; i++) {
+		foo.push(i);
+	}
+	return foo;
 }
-let rangeNumberArray = ranged (1,10);
+let rangeNumberArray = ranged(1, 10);
 console.log(rangeNumberArray);
