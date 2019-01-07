@@ -132,7 +132,7 @@ let myConstVariable = 0;
 // 	myConstVariable = 'less then zero' :
 // 	myConstVariable *= 10;
 
-myConstVariable = myConstVariable === 0 ? 1 :myConstVariable < 0 ? 'less then zero' :myConstVariable *=10;
+myConstVariable = myConstVariable === 0 ? 1 : myConstVariable < 0 ? 'less then zero' : myConstVariable *= 10;
 console.log(myConstVariable);
 
 
@@ -150,3 +150,7 @@ let car = {
 // 	car.needRepair = false;
 // }
 car.age > 5 ? car.needRepair = true : car.needRepair = false;
+
+
+
+
