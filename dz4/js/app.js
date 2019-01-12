@@ -82,8 +82,7 @@ console.log(doubleArray);
 
 // 8. Создать функцию которая принимает массив пользователей, поле на которое хочу проверить и значение на которое хочу проверять. Проверять что все аргументы переданы. Возвращать новый массив с пользователями соответсвующие указанным параметрам.
 
-let items = [
-	{
+let items = [{
 		name: 'Denis',
 		age: 29,
 		gender: 'male'
@@ -105,7 +104,7 @@ function getUsers(items, prop, value) {
 	for (item of items) {
 		if (item[prop] === value) {
 			res.push(item);
-		}		
+		}
 	}
 	return res;
 }
@@ -143,3 +142,39 @@ function ranged(start, end) {
 }
 let rangeNumberArray = ranged(1, 10);
 console.log(rangeNumberArray);
+
+const heroes = [
+    {name: 'Hulk', strength: 90000, sex: 'm'},
+    {name: 'Spider-Man', strength: 25000, sex: 'm'},
+    {name: 'Hawk Eye', strength: 136, sex: 'm'},
+    {name: 'Thor', strength: 100000, sex: 'm'},
+    {name: 'Black Widow', strength: 136, sex: 'f'},
+    {name: 'Vision', strength: 5000, sex: 'm'},
+    {name: 'Scarlet Witch', strength: 60, sex: 'f'},
+    {name: 'Mystique', strength: 120, sex: 'f'},
+    {name: 'Namora', strength: 75000, sex: 'f'},
+];
+
+function filteredbyStrength(heroes, min=60, max=100000){
+	let res6= [];
+	for (let i=0; i<heroes.length; i++){
+		if(heroes[i].strength >=min && heroes[i].strength<=max){
+			res6.push(heroes[i])
+		}
+	}
+	return res6;
+}
+let filteritem = filteredbyStrength(heroes, 60, 7876);
+console.log(filteritem);
+
+function filteredbySex(heroes,prop,value){
+	let res7 = [];
+	for( hero of heroes){
+		if(hero[prop]===value){
+			res7.push(hero);
+		}
+	}
+	return res7
+}
+let filterSex = filteredbySex(heroes, 'sex','f');
+console.log(filterSex);
