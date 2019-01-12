@@ -34,7 +34,7 @@ function arrayToStringed(array, callback) {
 	for (let item of array) {
 		response += callback(item);
 	}
-	return response.trim(item);
+	return response.trim();
 }
 
 function allStringToUpperCase(item) {
