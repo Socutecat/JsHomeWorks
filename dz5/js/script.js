@@ -4,20 +4,16 @@
 // функция должна возвращать true или false в зависимости от результата вызова callback (проверить число больше 5). Callback  должен принимать один элемент массива, его индекс в массиве и весь массив.
 
 function every(array, callback) {
-
 	if (!Array.isArray(array)) return "Please, the variable <arr> should be an array";
-
 	for (let i = 0; i < array.length; i++) {
 		if (!callback(array[i], i, array)) return false;
 	}
-
 	return true;
 }
 
 function isBetterThanFive(currentValue, index, array) {
 	return currentValue > 5;
 }
-
 console.log(every([6,2,34,4,2],isBetterThanFive));
 
 
@@ -38,7 +34,6 @@ function arrayToStringed(array, callback) {
 	for (let item of array) {
 		response += callback(item);
 	}
-
 	return response.trim(item);
 }
 
@@ -91,14 +86,11 @@ let mapRes = array.map(function (element) {
 		odd: !!(element % 2)
 	};
 });
-
 console.log(mapRes);
 
 // Проверить, содержит ли массив [12, 4, 50, 1, 0, 18, 40] элементы, равные нулю. Если да - вернуть false.
 
 let secondArr = [12, 4, 50, 1, 0, 18, 40];
-
-
 let secondArrRes = secondArr.every(function (element) {
 	if (!element){
 		return false;
@@ -129,11 +121,9 @@ let flexibleArr = [{char:"a",index:12}, {char:"w",index:8}, {char:"Y",index:10},
 					{char:"N",index:6}, {char:" ",index:5}, {char:"y",index:4}, {char:"r",index:13}, {char:"H",index:0},
 					{char:"e",index:11}, {char:"a",index:1}, {char:" ",index:9}, {char:"!",index:14}, {char:"e",index:7}];
 
-
-let responseSortArr = flexibleArr.sort(function(prev, next) {
-
+let responseSortArr = flexibleArr.sort(function(prev, next) {	
 	return prev.index - next.index;
-});
+	});
 console.log(responseSortArr);
 
 
