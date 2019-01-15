@@ -14,7 +14,7 @@ function every(array, callback) {
 function isBetterThanFive(currentValue, index, array) {
 	return currentValue > 5;
 }
-console.log(every([6,2,34,4,2],isBetterThanFive));
+console.log(every([6, 2, 34, 4, 2], isBetterThanFive));
 
 
 // 1. Создать две функции и дать им осмысленные названия:
@@ -92,7 +92,7 @@ console.log(mapRes);
 
 let secondArr = [12, 4, 50, 1, 0, 18, 40];
 let secondArrRes = secondArr.every(function (element) {
-	if (!element){
+	if (!element) {
 		return false;
 	};
 });
@@ -104,7 +104,7 @@ console.log(secondArrRes);
 let stringArr = ['yes', 'hello', 'no', 'easycode', 'what'];
 
 let strResponse = stringArr.some(function (element) {
-	if (element.length > 3){
+	if (element.length > 3) {
 		return true;
 	};
 });
@@ -117,31 +117,90 @@ console.log(strResponse);
 // [{char:"H",index:0}, {char:"i",index: 1}, {char:"!",index:2}] → “Hi!”
 
 
-let flexibleArr = [{char:"a",index:12}, {char:"w",index:8}, {char:"Y",index:10}, {char:"p",index:3}, {char:"p",index:2},
-					{char:"N",index:6}, {char:" ",index:5}, {char:"y",index:4}, {char:"r",index:13}, {char:"H",index:0},
-					{char:"e",index:11}, {char:"a",index:1}, {char:" ",index:9}, {char:"!",index:14}, {char:"e",index:7}];
+let flexibleArr = [{
+		char: "a",
+		index: 12
+	}, {
+		char: "w",
+		index: 8
+	}, {
+		char: "Y",
+		index: 10
+	}, {
+		char: "p",
+		index: 3
+	}, {
+		char: "p",
+		index: 2
+	},
+	{
+		char: "N",
+		index: 6
+	}, {
+		char: " ",
+		index: 5
+	}, {
+		char: "y",
+		index: 4
+	}, {
+		char: "r",
+		index: 13
+	}, {
+		char: "H",
+		index: 0
+	},
+	{
+		char: "e",
+		index: 11
+	}, {
+		char: "a",
+		index: 1
+	}, {
+		char: " ",
+		index: 9
+	}, {
+		char: "!",
+		index: 14
+	}, {
+		char: "e",
+		index: 7
+	}
+];
 
-let responseSortArr = flexibleArr.sort(function(prev, next) {	
+let responseSortArr = flexibleArr.sort(function (prev, next) {
 	return prev.index - next.index;
-	});
+});
 console.log(responseSortArr);
 
 
 function arrayToStr(flexibleArr) {
-	return flexibleArr.reduce(function(currentValue, item) {
+	return flexibleArr.reduce(function (currentValue, item) {
 		return currentValue + item.char;
-	}, '' );
+	}, '');
 }
-console.log(arrayToStr([{char:"H",index:0}, {char:"i",index: 1}, {char:"!",index:2}]));
+console.log(arrayToStr([{
+	char: "H",
+	index: 0
+}, {
+	char: "i",
+	index: 1
+}, {
+	char: "!",
+	index: 2
+}]));
 
 
 
 // Отсортируйте массив массивов так, чтобы вначале располагались наименьшие массивы (размер массива определяется его длиной):
 //  [  [14, 45],  [1],  ['a', 'c', 'd']  ] → [ [1], [14, 45], ['a', 'c', 'd'] ]
 
-const myArrayFlex = [[14,45], [1], ['a' ,'c' ,'d']];
+const myArrayFlex = [
+	[14, 45],
+	[1],
+	['a', 'c', 'd']
+];
 
-let myResponse = myArrayFlex.sort(function(prev,next) {
+let myResponse = myArrayFlex.sort(function (prev, next) {
 	return prev.length - next.length;
 });
 
@@ -159,16 +218,132 @@ console.log(myResponse);
 // Отсортировать их по возрастающему количеству ядер (cores).
 
 
-const arrCPU = [
-	{cpu: 'intel', info: {cores:2, сache: 3}},
-	{cpu: 'intel', info: {cores:4, сache: 4}},
-	{cpu: 'amd', info: {cores:1, сache: 1}},
-	{cpu: 'intel', info: {cores:3, сache: 2}},
-	{cpu: 'amd', info: {cores:4, сache: 2}}
- ];
+const arrCPU = [{
+		cpu: 'intel',
+		info: {
+			cores: 2,
+			сache: 3
+		}
+	},
+	{
+		cpu: 'intel',
+		info: {
+			cores: 4,
+			сache: 4
+		}
+	},
+	{
+		cpu: 'amd',
+		info: {
+			cores: 1,
+			сache: 1
+		}
+	},
+	{
+		cpu: 'intel',
+		info: {
+			cores: 3,
+			сache: 2
+		}
+	},
+	{
+		cpu: 'amd',
+		info: {
+			cores: 4,
+			сache: 2
+		}
+	}
+];
 
-let arrCPUresponse = arrCPU.sort(function(prev, next) {
+let arrCPUresponse = arrCPU.sort(function (prev, next) {
 	return prev.info.cores - next.info.cores;
 });
 
 console.log(arrCPUresponse);
+
+let products = [{
+		title: 'prod1',
+		price: 5.2
+	}, {
+		title: 'prod2',
+		price: 0.18
+	},
+	{
+		title: 'prod3',
+		price: 15
+	}, {
+		title: 'prod4',
+		price: 25
+	},
+	{
+		title: 'prod5',
+		price: 18.9
+	}, {
+		title: 'prod6',
+		price: 8
+	},
+	{
+		title: 'prod7',
+		price: 19
+	}, {
+		title: 'prod8',
+		price: 63
+	}
+];
+
+
+// let productsArr = products.filter(function (item, minPrice, maxPrice) {
+// 	return item.price >= minPrice && item.price <= maxPrice;
+// });
+
+// console.log(productsArr)
+// const foo = (products, priceMin, priceMax) => products.filter(product => {
+// 		if (priceMin > priceMax) {
+// 		  return product.price < priceMin && product.price > priceMax
+// 		} else {
+// 		  return product.price > priceMin && product.price < priceMax
+// 		}
+// 	  }).sort((productA, productB) => productA.price > productB.price)
+// 	//   console.log(foo(products,5, 20))
+// 	  console.log(foo(products, 10, 5))
+
+
+// let sortProduct = productsArr.sort(function (prev,next){
+// 	return prev.price - next.price;
+// },);
+
+// console.log(sortProduct);
+
+/**
+ * 
+ * @param {*} products 
+ * @param {*} minPrice 
+ * @param {*} maxPrice 
+ */
+function filterCollection(products, minPrice, maxPrice) {
+	let res = products.filter(value => value.price >= minPrice && value.price <= maxPrice);
+
+	return res
+};
+
+console.log(filterCollection(products, 5, 55));
+
+// let productres = products.filter((value,minPrice,maxPrice) => value.price > minPrice && value.price < maxPrice).sort((prev,next) => prev.price > next.price);
+
+// console.log(products,10,15);
+
+// let productRes = products.filter(function (product, minP, maxP){
+// 	return product.price > minP && product.price < maxP
+// })
+
+// console.log(productRes);
+// let prod2 = productRes.sort((prev,next) => prev.price - next.price)
+
+// console.log(prod2);
+
+// const items = ['item1', 'item2', 'item3'];
+// const copy = [];
+
+// items.forEach(function(item){
+//   copy.push(item)
+// });
