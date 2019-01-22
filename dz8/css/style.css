@@ -1,0 +1,15 @@
+.d-none {
+	display: none;
+  }
+  
+  .dropdown-item {
+	cursor: pointer;
+  }
+
+.d-block{
+	display: inline-block;
+}
+
+.color-red{
+	background-color: red;
+}
