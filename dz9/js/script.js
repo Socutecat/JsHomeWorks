@@ -197,16 +197,12 @@ console.log(getObj('a','b','c','d'));
 
 const organisation = {  
   	name: 'Google',   
-  	info: { employees: ['Vlad', 'Olga'], 
-	partners: ['Microsoft', 'Facebook', 'Xing']   } 
+  	info: { employees: ['Vlad', 'Olga'], partners: ['Microsoft', 'Facebook', 'Xing'] } 
 };
 
+function getInfo(user){
+	const {name, info: {partners:[name_1,name_2]}} = user;
+	console.log(`Name -${name},Partners- ${name_1},${name_2}`);
+}
 
-	 const {name,pr} = organisation
-	 console.log(name)
-
-
-
-// function gerInfo({name=unknown, info:{employees:w, partners:d}}){
-// 	const {
-// }
+getInfo(organisation);
