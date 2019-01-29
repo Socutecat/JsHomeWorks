@@ -77,15 +77,12 @@ console.log(price.getPriceWithDiscount());
 
 const myObj = {
 	height: 10,
-	increase: function () {
-		this.height++
-		return this;
-	}
+	increase
 }
-// function increase (){
-// 	this.height++
-// 	return this;
-// }
+function increase (){
+	this.height++
+	return this;
+}
 
 console.log(myObj.increase());
 
@@ -167,12 +164,12 @@ console.log(getElementHeight()); // undefined
 let Sum = (...rest) => {
 	const params = Array.prototype.slice.call(rest);
 	if (!params.length) return 0;
-	return params.reduce((prev,next)=>{
+	return params.reduce((prev, next) => {
 		return prev + next;
 	});
 }
 
-console.log(Sum(1, 2, 3, 4,555,2111,4))
+console.log(Sum(1, 2, 3, 4, 555, 2111, 4))
 console.log(Sum());
 
 // Используя rest оператор и деструктуризацию, создать функцию, которая принимает любое количество аргументов и возвращает объект, содержащий первый аргумент и массив из остатка:
@@ -183,26 +180,53 @@ console.log(Sum());
 //   other: [‘b’, ‘c’, ‘d’]
 // }
 
-let getObj = (...rest)=>{
-	return{
+let getObj = (...rest) => {
+	return {
 		first: rest[0],
 		other: rest.slice(1)
 	}
 }
-console.log(getObj('a','b','c','d'));
+console.log(getObj('a', 'b', 'c', 'd'));
 
 // 2. Организовать функцию getInfo, которая принимает объект вида
 // { name: ...,  info: { employees: [...], partners: [ … ]  } }
 // и выводит в консоль имя (если имени нет, показывать ‘Unknown’) и первые две компании из массива partners:
 
-const organisation = {  
-  	name: 'Google',   
-  	info: { employees: ['Vlad', 'Olga'], partners: ['Microsoft', 'Facebook', 'Xing'] } 
+const organisation = {
+	name: 'Google',
+	info: {
+		employees: ['Vlad', 'Olga'],
+		partners: ['Microsoft', 'Facebook', 'Xing']
+	}
 };
 
-function getInfo(user){
-	const {name, info: {partners:[name_1,name_2]}} = user;
-	console.log(`Name -${name},Partners- ${name_1},${name_2}`);
+function getInfo(user) {
+	const {
+		name,
+		info: {
+			partners: [name_1, name_2]
+		}
+	} = user;
+	console.log(`Name - ${name||'Unknown'}, Partners - ${name_1}, ${name_2}`);
 }
 
 getInfo(organisation);
+
+// var metadata = {
+//     title: "Scratchpad",
+//     translations: [
+//        {
+//         locale: "de",
+//         localization_tags: [ ],
+//         last_edit: "2014-04-14T08:43:37",
+//         url: "/de/docs/Tools/Scratchpad",
+//         title: "JavaScript-Umgebung"
+//        }
+//     ],
+//     url: "/en-US/docs/Tools/Scratchpad"
+// };
+
+// var { title: englishTitle, translations: [{ title: localeTitle }] } = metadata;
+
+// console.log(englishTitle); // "Scratchpad"
+// console.log(localeTitle);  // "JavaScript-Umgebung"

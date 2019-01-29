@@ -39,12 +39,17 @@ document.addEventListener('click',function(e){
 
 // При нажатии на кнопку btn-generate добавлять в список ul элемент списка Li с текстом Item + порядковый номер Li по списку, т.е Item 3, Item 4 и т.д 
 
-btn_generate.addEventListener('click',(event)=>{
-	li.forEach((elem,index)=>{
-		if (index<1) return ;
-			elem.insertAdjacentHTML('afterend', '<li> Item+'+[index] + '</li>')
+// btn_generate.addEventListener('click',(event)=>{
+// 	li.forEach((elem,index)=>{
+// 		if (index<1) return ;
+// 			elem.insertAdjacentHTML('afterend', '<li> Item+'+[index] + '</li>')
 		
-	})
-})
+// 	})
+// })
 
 // ДЕНИС КАК ПОЛУЧИТЬ ПОРЯДКОВЫЙ НОМЕР LI ПО СПИСКУ ??
+
+btn_generate.addEventListener('click',(event)=>{
+	const li_1= ul.querySelectorAll('li');
+	for (i = 0; i < li_1.length; i++) document.querySelector('ul').insertAdjacentHTML('beforeend', '<li class = "new-item">item ' + ( li_1 + i) + '</li>');
+})
