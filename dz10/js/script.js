@@ -213,3 +213,4 @@ console.log(myStringModule.setString('mystring'));
 console.log(myStringModule.getLength())
 console.log(myStringModule.getString())
 console.log(myStringModule.getReverse());
+

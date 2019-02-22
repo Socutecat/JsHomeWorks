@@ -38,9 +38,7 @@ class Prom {
   
   const inst2 = new Prom();
   inst2.promise.then((data) => console.log(data), (reason) => console.log(`rejected with reason: ${reason}`));
-  inst2.reject('error not found this text');
-
-
+  inst2.reject('error not found this text');  
 // }
 
 // const inst = new Prom();
