@@ -1,15 +1,28 @@
-.d-none {
-	display: none;
-  }
+.menu {
+  list-style-type: none;
+}
+.dropdown-menu {
+  display: none;
+}
   
-  .dropdown-item {
-	cursor: pointer;
-  }
-
-.d-block{
-	display: inline-block;
+.dropdown-item {
+  cursor: pointer;
 }
 
-.color-red{
-	background-color: red;
+.dropdown-item:before {
+	font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f067";
+  
+}
+
+.active.dropdown-item:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f068";
+}
+
+.active>.dropdown-menu {
+  display: block;
+  transition: .2s ease in;
 }
